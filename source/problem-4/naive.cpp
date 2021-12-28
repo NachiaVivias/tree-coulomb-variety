@@ -11,7 +11,7 @@ O ( N^2 )
 #include <cassert>
 using namespace std;
 using i32 = int;
-using u32 = unsigned int;
+using u32 = unsigned;
 using i64 = long long;
 using u64 = unsigned long long;
 #define rep(i,n) for(int i=0; i<(n); i++)
@@ -93,7 +93,7 @@ int main() {
             int p; cin >> p; p--;
             auto dist = get_dist_table(p);
             u64 ans = 0;
-            for(int i=0; i<N; i++) ans = (ans + Q[i] * dist[i]) % MOD;
+            for(int i=0; i<N; i++) ans = (ans + Q[i] * k0_div_dist_sq[dist[i]]) % MOD;
             cout << ans << "\n";
         }
     }
